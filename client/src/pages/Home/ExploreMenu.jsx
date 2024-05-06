@@ -7,9 +7,9 @@ import { Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 
-const ExploreMenu = () => {
+const ExploreMenu = ({category , setCategory}) => {
   return (
-    <div className="max-w-5xl mx-auto  p-3 my-4 border-b-2">
+    <div className="max-w-5xl mx-auto  p-3 my-4 ">
       <div className="max-w-xl">
         <h2 className="text-xl  font-semibold">Explore Our Menu</h2>
 
@@ -55,14 +55,18 @@ const ExploreMenu = () => {
       >
         {menu_list.map((item, index) => (
             <SwiperSlide key={index}>
-          <div key={index} className="text-center cursor-pointer">
-            <img src={item.menu_image} alt={item.menu_name} className="" />
+          <div key={index} className="text-center cursor-pointer" onClick={()=>setCategory((prev)=>prev === item.menu_name ? "All" : item.menu_name)}>
+            <img src={item.menu_image} alt={item.menu_name} className={`${category === item.menu_name ? 'border-2 border-orange-500 rounded-full p-1' : ''}`} />
             <p className="text-gray-600">{item.menu_name} </p>
           </div>
           </SwiperSlide>
         ))}
         </Swiper>
       </div>
+
+
+
+      <hr className='bg-gray-300 mt-12 h-[2px]'/>
     </div>
   );
 };
