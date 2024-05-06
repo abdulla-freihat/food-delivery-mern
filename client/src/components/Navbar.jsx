@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { FaShoppingBag } from "react-icons/fa";
@@ -15,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-5 relative">
+    <div className="p-5 relative z-50"> {/* Add z-index to the navbar */}
       <nav className="max-w-5xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <button
@@ -79,7 +80,7 @@ const Navbar = () => {
 
      {/* mobile menu */}
       {isMenuOpen && (
-        <div className="absolute bg-white top-full left-0 w-full shadow-lg py-2 lg:hidden">
+        <div className="absolute bg-white top-full left-0 w-full shadow-lg py-2 lg:hidden z-50"> {/* Add z-index to the mobile menu */}
           <div className="max-w-5xl mx-auto flex  p-2">
             <div className="flex flex-col gap-4">
               <Link
