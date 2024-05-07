@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Hero />
       <ExploreMenu  category ={category} setCategory ={setCategory}/>
-      <TopDishes />
+      <TopDishes category={category} />
     </>
   );
 };
