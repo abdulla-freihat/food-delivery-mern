@@ -12,7 +12,7 @@ const Hero = () => {
           minHeight: "30rem", // Default height for small screens
         }}
       >
-        <div className="max-w-xl mx-12 flex flex-col gap-4">
+        <div className="max-w-xl mx-12 flex flex-col gap-4 animate-fade ">
           <h1 className="text-white text-2xl md:text-4xl font-bold">
             Order Your Favorite Food Here.
           </h1>
