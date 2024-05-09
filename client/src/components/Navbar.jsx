@@ -67,7 +67,13 @@ const Navbar = ({setShowAuthForm}) => {
 
         <div className="flex items-center gap-6">
           <CiSearch className="w-6 h-6 cursor-pointer text-gray-600" />
-          <FaShoppingBag className="w-6 h-6 cursor-pointer text-gray-600" />
+          {/* Shopping Bag Icon with Badge */}
+          <div className="relative">
+            <FaShoppingBag className="w-6 h-6 cursor-pointer text-gray-600" />
+            <span className="absolute -top-1 -right-2 bg-orange-500 text-white w-4 h-4 flex justify-center items-center rounded-full text-xs">
+              0
+            </span>
+          </div>
           <button
                onClick={()=>setShowAuthForm(true)}
             className="hidden lg:block bg-transparent border border-yellow-700 rounded-full px-6 py-2 text-sm font-medium"
