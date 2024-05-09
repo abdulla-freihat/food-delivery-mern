@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 const ExploreMenu = ({category , setCategory}) => {
   return (
-    <div className="max-w-5xl mx-auto  p-3 my-4 ">
+    <div className="max-w-6xl mx-auto  p-3 my-4 ">
       <div className="max-w-xl">
         <h2 className="text-xl  font-semibold">Explore Our Menu</h2>
 

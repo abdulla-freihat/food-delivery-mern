@@ -17,7 +17,7 @@ const Navbar = ({setShowAuthForm}) => {
 
   return (
     <div className="p-5 relative z-10"> {/* Add z-index to the navbar */}
-      <nav className="max-w-5xl mx-auto flex justify-between items-center">
+      <nav className="max-w-6xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <button
             className="bg-blue-600 text-white p-2 rounded-full lg:hidden hover:bg-blue-700"

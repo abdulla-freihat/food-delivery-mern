@@ -7,7 +7,7 @@ const TopDishes = ({category}) => {
     const {food_list} = useContext(StoreContext)
 
   return (
-    <div  className="max-w-5xl mx-auto  p-3 my-4 ">
+    <div  className="max-w-6xl mx-auto  p-3 my-4 ">
     
     
         <h2 className="text-xl  font-semibold">Top Dishes Near You</h2>

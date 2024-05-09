@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="max-w-5xl mx-auto p-3 mt-8">
+    <div className="max-w-6xl mx-auto p-3 mt-8">
       <div
         className="bg-no-repeat bg-cover relative flex items-center"
         style={{ 
