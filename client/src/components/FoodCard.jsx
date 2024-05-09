@@ -33,7 +33,7 @@ const FoodCard = ({item}) => {
          }              
      </div>
 
-        <div className='p-2 flex flex-col gap-1'>
+        <div className='px-2 pt-2 pb-4 flex flex-col gap-1'>
 
             <div className='flex justify-between items-center flex-col sm:flex-row gap-2 '>
               <h4 className='font-semibold'>{item.name}</h4>
