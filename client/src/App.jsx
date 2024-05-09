@@ -6,6 +6,7 @@ import StoreContextProvider from "./context/StoreContext.jsx";
 import Footer from "./components/Footer.jsx";
 import { useState } from "react";
 import AuthPopup from "./components/AuthPopup.jsx";
+import Page404 from "./pages/Page404.jsx";
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
                <Route  path ='/'  element={<Home />} />
               
                <Route  path ='/cart'  element={<Cart />} />
+               <Route  path ='*'  element={<Page404 />} />
+
          
             </Routes>
 
