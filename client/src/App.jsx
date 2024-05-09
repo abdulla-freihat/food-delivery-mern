@@ -4,15 +4,25 @@ import Home from "./pages/Home/Home";
 import Cart from "./pages/cart/Cart";
 import StoreContextProvider from "./context/StoreContext.jsx";
 import Footer from "./components/Footer.jsx";
+import { useState } from "react";
+import AuthPopup from "./components/AuthPopup.jsx";
 
 function App() {
+
+
+  const [showAuthForm , setShowAuthForm] = useState(false);
 
   return (
     <>
       <BrowserRouter>
+
+         
+
       <StoreContextProvider>
         
-         <Navbar />
+          {showAuthForm ? <AuthPopup setShowAuthForm={setShowAuthForm} /> : <></>}
+
+         <Navbar setShowAuthForm = {setShowAuthForm} />
 
             <Routes>
                <Route  path ='/'  element={<Home />} />

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({setShowAuthForm}) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-5 relative z-50"> {/* Add z-index to the navbar */}
+    <div className="p-5 relative z-10"> {/* Add z-index to the navbar */}
       <nav className="max-w-5xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <button
@@ -68,19 +68,19 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <CiSearch className="w-6 h-6 cursor-pointer text-gray-600" />
           <FaShoppingBag className="w-6 h-6 cursor-pointer text-gray-600" />
-          <Link
-            to="/sign-in"
+          <button
+               onClick={()=>setShowAuthForm(true)}
             className="hidden lg:block bg-transparent border border-yellow-700 rounded-full px-6 py-2 text-sm font-medium"
           >
             Sign In
-          </Link>
+          </button>
         </div>
       </nav>
 
 
      {/* mobile menu */}
       {isMenuOpen && (
-        <div className="absolute bg-white top-full left-0 w-full shadow-lg py-2 lg:hidden z-50"> {/* Add z-index to the mobile menu */}
+        <div className="absolute bg-white top-full left-0 w-full shadow-lg py-2 lg:hidden z-10"> {/* Add z-index to the mobile menu */}
           <div className="max-w-5xl mx-auto flex  p-2">
             <div className="flex flex-col gap-4">
               <Link
@@ -124,14 +124,14 @@ const Navbar = () => {
               </Link>
 
 
-              <Link
-            to="/sign-in"
-            onClick={()=>setIsMenuOpen(false)}
+              <button
+           
+            onClick={()=>setShowAuthForm(true)}
 
             className="bg-transparent border border-yellow-700 rounded-full px-6 py-2 text-sm font-medium"
           >
             Sign In
-          </Link>
+          </button>
             </div>
           </div>
         </div>
