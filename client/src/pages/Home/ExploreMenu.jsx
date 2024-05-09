@@ -34,7 +34,7 @@ const ExploreMenu = ({category , setCategory}) => {
             spaceBetween: 20,
           },
           480: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 20,
           },
           600: {
