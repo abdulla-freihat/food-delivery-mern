@@ -3,7 +3,7 @@ import { useState } from "react";
 import { assets } from "../assets/assets";
 
 const AuthPopup = ({ setShowAuthForm }) => {
-  const [currState, setCurrState] = useState("Sign-Up");
+  const [currState, setCurrState] = useState("Login");
   return (
     <div className="fixed z-20 w-[100%] h-[100%] bg-[#00000090] text-gray-600  flex justify-center items-center p-2">
       <form className="bg-white flex flex-col p-6 gap-5 animate-fade rounded-md flex-1 max-w-sm  ">
