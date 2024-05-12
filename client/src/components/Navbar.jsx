@@ -1,12 +1,12 @@
 // Navbar.jsx
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import { assets } from "../assets/assets";
 import { FaShoppingBag } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
-
+import { StoreContext } from "../context/StoreContext";
 const Navbar = ({setShowAuthForm}) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +14,8 @@ const Navbar = ({setShowAuthForm}) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const {getCartTotalAmount} = useContext(StoreContext)
 
   return (
     <div className="p-5 relative z-10"> {/* Add z-index to the navbar */}
@@ -68,12 +70,12 @@ const Navbar = ({setShowAuthForm}) => {
         <div className="flex items-center gap-6">
           <CiSearch className="w-6 h-6 cursor-pointer text-gray-600" />
           {/* Shopping Bag Icon with Badge */}
-          <div className="relative">
+          <Link  to='/cart' className="relative" >
             <FaShoppingBag className="w-6 h-6 cursor-pointer text-gray-600" />
-            <span className="absolute -top-1 -right-2 bg-orange-500 text-white w-4 h-4 flex justify-center items-center rounded-full text-xs">
-              0
+            <span className={`${getCartTotalAmount() === 0? "" : "absolute -top-1 -right-2 bg-orange-500 text-white w-4 h-4 flex justify-center items-center rounded-full text-xs"}`}>
+              
             </span>
-          </div>
+          </Link>
           <button
                onClick={()=>setShowAuthForm(true)}
             className="hidden lg:block bg-transparent border border-yellow-700 rounded-full px-6 py-2 text-sm font-medium"
