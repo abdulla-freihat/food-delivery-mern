@@ -1,5 +1,6 @@
 import React from 'react'
 import CartCodeForm from './CartCodeForm'
+import { Link } from 'react-router-dom'
 
 const CartOrderDetails = ({getCartTotalAmount}) => {
   return (
@@ -28,7 +29,7 @@ const CartOrderDetails = ({getCartTotalAmount}) => {
                          </div>
                          <hr />
 
-                         <button className='bg-orange-500 hover:bg-orange-600 font-semibold rounded p-2 text-white mt-4'>Proceed Checkout</button>
+                         <Link to='/order' className='bg-orange-500 text-center hover:bg-orange-600 font-semibold rounded p-2 text-white mt-4'>Proceed Checkout</Link>
                      </div>
                 </div>
 
