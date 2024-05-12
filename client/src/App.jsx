@@ -7,6 +7,7 @@ import Footer from "./components/Footer.jsx";
 import { useState } from "react";
 import AuthPopup from "./components/AuthPopup.jsx";
 import Page404 from "./pages/Page404.jsx";
+import Order from "./pages/order/Order.jsx";
 
 function App() {
   const [showAuthForm, setShowAuthForm] = useState(false);
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             <Route path="/cart" element={<Cart />} />
+            <Route path="/order" element={<Order />} />
 
             <Route path="*" element={<Page404 />} />
           </Routes>
