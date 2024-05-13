@@ -59,4 +59,30 @@ const addFood =async (req, res)=>{
     
  }
 
-export {addFood , getFood}
+
+
+   //remove food item  DELETE
+   
+   const removeFood = async(req ,res)=>{
+
+      try{
+
+         const food = await Food.findById(req.body.id);
+
+          fs.unlink(`uploads/${food.image}` , ()=>{});
+
+            
+           await Food.findByIdAndDelete(req.body.id);
+
+
+               res.status(201).json({success: true , message:'Food Deleted Successfully'})
+
+
+      }catch(err){
+
+         res.status(500).json({success: false , message:'Error!'})
+
+      }
+       
+   }
+export {addFood , getFood , removeFood}
