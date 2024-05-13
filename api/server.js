@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { connectDb } from './config/db.js';
 
 
 
@@ -21,6 +22,11 @@ import cors from 'cors';
 
      res.send('Api Working.')
     } )
+
+
+
+    //DB connection
+     connectDb();
 
 
     app.listen(port , ()=>{
