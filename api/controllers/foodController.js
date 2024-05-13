@@ -33,4 +33,30 @@ const addFood =async (req, res)=>{
 }
 
 
-export {addFood}
+//all food list get
+
+ const getFood = async(req, res)=>{
+
+     try{
+
+       const foodList = await  Food.find({});
+
+          if(!foodList){
+
+            res.status(404).json({success: false , message:'No food list found.'});
+
+          }
+
+          res.status(201).json({success: true , data:foodList})
+
+
+
+     }catch(err){
+
+      res.status(500).json({success: false , message:'Error!'})
+
+     }
+    
+ }
+
+export {addFood , getFood}
