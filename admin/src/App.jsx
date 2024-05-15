@@ -5,6 +5,10 @@ import { BrowserRouter , Route , Routes } from "react-router-dom";
 import AddItem from "./pages/AddItem";
 import ListItem from "./pages/ListItem";
 import Orders from "./pages/Orders";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 
@@ -14,7 +18,7 @@ const App = () => {
       <BrowserRouter>
 
      
-
+      <ToastContainer />
        <Navbar />
         <hr className="border-2 "/>
 
