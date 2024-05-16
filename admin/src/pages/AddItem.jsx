@@ -72,7 +72,7 @@ const AddItem = () => {
 
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit} className="max-w-sm flex flex-col gap-5 mx-12 mt-5">
+      <form onSubmit={handleSubmit} className="max-w-sm flex flex-col gap-5 mx-5 mt-5">
         <div className="flex flex-col gap-2">
           <label htmlFor="image" className="text-md text-gray-500">
             Upload Product Image
