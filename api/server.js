@@ -2,7 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { connectDb } from './config/db.js';
 import foodRouter from './routes/foodRoutes.js';
-
+import userRouter from './routes/userRoutes.js';
+import "dotenv/config";
 
 
 
@@ -32,8 +33,9 @@ import foodRouter from './routes/foodRoutes.js';
 
       //api endpoints
 
-        app.use('/api/food' , foodRouter)
+        app.use('/api/food' , foodRouter);
         app.use('/images' , express.static('uploads'));
+        app.use('/api/user' , userRouter);
 
     app.listen(port , ()=>{
 
