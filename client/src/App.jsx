@@ -8,6 +8,9 @@ import { useState } from "react";
 import AuthPopup from "./components/AuthPopup.jsx";
 import Page404 from "./pages/Page404.jsx";
 import Order from "./pages/order/Order.jsx";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [showAuthForm, setShowAuthForm] = useState(false);
@@ -15,6 +18,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ToastContainer />
         <StoreContextProvider>
           {showAuthForm ? (
             <AuthPopup setShowAuthForm={setShowAuthForm} />
