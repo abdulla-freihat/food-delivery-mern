@@ -9,8 +9,6 @@ const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
-
-
 //register user
 
 const registerUser = async (req, res) => {
@@ -67,6 +65,39 @@ const registerUser = async (req, res) => {
 
 //login user
 
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid email" });
+    }
+
+      const isMatch = await bcrypt.compare(password , user.password);
+
+      if(!isMatch){
+
+        return res
+        .status(400)
+        .json({ success: false, message: "Invalid password . try again" });
+      }
+
+
+       const token = createToken(user._id);
+
+       return res
+      .status(201)
+      .json({ success: true, message: "Sign in successfully", token });
+
+        
+
+  } catch (err) {
+    return res.status(500).json({ success: false, message: "Server error" });
+  }
+};
 
 export { registerUser, loginUser };
