@@ -94,7 +94,7 @@ const logout = ()=>{
             <FaShoppingBag className="w-6 h-6 cursor-pointer text-gray-600" />
             {getCartTotalAmount() > 0 && (
               <span className="absolute -top-1 -right-2 bg-orange-500 text-white w-4 h-4 flex justify-center items-center rounded-full text-xs">
-                {getCartTotalAmount()}
+               
               </span>
             )}
           </Link>
