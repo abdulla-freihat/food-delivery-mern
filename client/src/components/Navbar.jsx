@@ -34,7 +34,8 @@ const logout = ()=>{
 
      setToken("");
      navigate("/");
-     toast.success('Logout successfully');
+
+     window.location.reload();
 }
 
 
