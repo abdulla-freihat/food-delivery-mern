@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartItems = ({food_list  , cartItems , removeFromCart}) => {
+const CartItems = ({food_list  , cartItems , removeFromCart , url}) => {
   return (
     <div className='max-w-6xl mx-auto '>
 
@@ -28,12 +28,12 @@ const CartItems = ({food_list  , cartItems , removeFromCart}) => {
                           return(
                                  <>
                              <div key={index} className='flex flex-col gap-2 sm:flex-row justify-between items-center my-4'>
-                               <img src={item.image} alt={item.name} className='w-20 rounded-md' />
+                               <img  src={`${url}/images/${item.image}`} alt={item.name} className='w-20 rounded-md' />
                                 <p>{item.name}</p>
                                 <p>${item.price}</p>
                                 <p>x{cartItems[item._id]}</p>
                                 <p>${item.price * cartItems[item._id]}</p>
-                                <button className='rounded bg-red-500 hover:bg-red-600 text-white p-2'>Remove</button>
+                                <button onClick={()=>removeFromCart(item._id)} className='rounded bg-red-500 hover:bg-red-600 text-white p-2'>Remove</button>
                              </div>
                              <hr className='bg-gray-300 mt-5 '/>
                              </>

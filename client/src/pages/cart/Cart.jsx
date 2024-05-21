@@ -6,11 +6,11 @@ import CartOrderDetails from './CartOrderDetails.jsx'
 
 const Cart = () => {
 
-  const {food_list  , cartItems , removeFromCart , getCartTotalAmount} = useContext(StoreContext);
+  const {food_list  , cartItems , removeFromCart , getCartTotalAmount , url} = useContext(StoreContext);
 
   return (
     <div className='p-5 '>
-        <CartItems food_list={food_list} cartItems={cartItems}  removeFromCart={removeFromCart}  />
+        <CartItems food_list={food_list} cartItems={cartItems}  removeFromCart={removeFromCart} url={url} />
 
         <CartOrderDetails  getCartTotalAmount ={getCartTotalAmount} />
 
