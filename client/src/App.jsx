@@ -8,6 +8,7 @@ import { useState } from "react";
 import AuthPopup from "./components/AuthPopup.jsx";
 import Page404 from "./pages/Page404.jsx";
 import Order from "./pages/order/Order.jsx";
+import VerifyOrder from "./pages/verify/VerifyOrder.jsx";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,6 +34,7 @@ function App() {
 
             <Route path="/cart" element={<Cart />} />
             <Route path="/order" element={<Order />} />
+            <Route path="/verify" element={<VerifyOrder />} />
 
             <Route path="*" element={<Page404 />} />
           </Routes>
