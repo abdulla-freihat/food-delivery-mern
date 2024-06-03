@@ -16,7 +16,7 @@ const stripe =  new Stripe(process.env.STRIPE_SECRET_KEY)
 
      try{
 
-        const newOrder = newOrder({
+        const newOrder = new Order({
              userId : req.body.userId,
              items:req.body.items,
              amount:req.body.amount,

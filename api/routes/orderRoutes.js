@@ -5,7 +5,7 @@ import authMiddleware from "../middleware/auth.js";
 
 const orderRouter = express.Router();
 
-orderRouter.post('/placer-order' , authMiddleware , placeOrder);
+orderRouter.post('/place-order' , authMiddleware , placeOrder);
 
 
 
