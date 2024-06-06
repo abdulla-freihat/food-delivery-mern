@@ -118,12 +118,12 @@ const logout = ()=>{
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-orange-500">
                   <ul className="flex flex-col gap-2 p-2">
-                    <Link to='/my-orders'>
-                    <li className="flex items-center cursor-pointer p-2 hover:bg-gray-100">
+                   
+                    <li onClick={()=>navigate('/my-orders')} className="flex items-center cursor-pointer p-2 hover:bg-gray-100">
                       <img src={assets.bag_icon} alt="orders" className="w-5 mr-2" />
                       <p className="text-sm">Orders</p>
                     </li>
-                    </Link>
+                    
                     <li onClick={logout} className="flex items-center cursor-pointer p-2 hover:bg-gray-100">
                       <img src={assets.logout_icon} alt="logout" className="w-5 mr-2" />
                       <p className="text-sm">Logout</p>
