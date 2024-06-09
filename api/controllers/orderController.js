@@ -81,10 +81,10 @@ const verifyOrder = async (req, res) => {
       await Order.findByIdAndDelete(orderId);
 
       return res.status(400).json({
-          success: false,
-  
-          message: "Not Paid",
-        });
+        success: false,
+
+        message: "Not Paid",
+      });
     }
   } catch (err) {
     return res.status(500).json({
@@ -94,32 +94,46 @@ const verifyOrder = async (req, res) => {
   }
 };
 
-//user orders 
+//user orders
 
-const userOrders = async(req, res)=>{
+const userOrders = async (req, res) => {
+  try {
+    const userOrders = await Order.find({ userId: req.body.userId });
+
+    return res.status(201).json({
+      success: true,
+
+      data: userOrders,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Error",
+    });
+  }
+};
+
+//listing orders for admin panel api route
+
+const listOrders = async (req, res) => {
+  try {
+
+     const orders = await Order.find({});
 
 
-    try{
+     return res.status(201).json({
+      success: true,
 
-      
-
-      const userOrders = await Order.find({userId : req.body.userId});
-
-      return res.status(201).json({
-        success: true,
-
-         data : userOrders
-      });
+      data: orders,
+    });
 
 
-    }catch(err){
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Error",
+    });
+  }
+};
 
-      return res.status(500).json({
-        success: false,
-        message: "Error",
-      });
-    }
-   
-}
-
-export { placeOrder, verifyOrder , userOrders };
+export { placeOrder, verifyOrder, userOrders, listOrders };
