@@ -20,8 +20,29 @@ const Orders = () => {
     }
   };
 
+
+  const statusHandler=async(e , orderId)=>{
+
+          const res  = await axios.post(`${url}/api/order/update-status`, {
+            
+            
+            orderId,
+            status: e.target.value
+          
+          
+          })
+
+          if(res.data.success){
+
+                await fetchOrders();
+             
+          }
+  }
+
+
   useEffect(() => {
     fetchOrders();
+
   }, []);
 
   return( 
@@ -71,7 +92,7 @@ const Orders = () => {
                     <p className="text-sm text-[#454545]">Items : {order.items.length}</p>
                     <p className="text-sm text-[#454545] font-semibold">${order.amount}</p>
 
-                    <select className="p-2 bg-[#ffe8e4] border outline-none">
+                    <select onChange={(e)=>statusHandler(e , order._id)} value={order.status} className="p-2 bg-[#ffe8e4] border outline-none">
                            <option className="Food Processing...">Food Processing</option>
                            <option className="Out">Out Of Delivery</option>
                            <option className="Delivered">Delivered</option>
