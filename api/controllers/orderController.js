@@ -136,4 +136,32 @@ const listOrders = async (req, res) => {
   }
 };
 
-export { placeOrder, verifyOrder, userOrders, listOrders };
+
+//
+
+const updateStatus = async(req, res)=>{
+
+   try{
+          await Order.findByIdAndUpdate(req.body.orderId ,{status:req.body.status});
+
+          return res.status(201).json({
+            success: true,
+      
+            message:'Status Updated',
+          });
+      
+
+       
+   }catch(err){
+
+    return res.status(500).json({
+      success: false,
+      message: "Error",
+    });
+  
+   }
+
+
+}
+
+export { placeOrder, verifyOrder, userOrders, listOrders , updateStatus };

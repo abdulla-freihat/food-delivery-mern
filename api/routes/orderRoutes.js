@@ -1,5 +1,5 @@
 import express from 'express';
-import { placeOrder , verifyOrder , userOrders, listOrders } from "../controllers/orderController.js";
+import { placeOrder , verifyOrder , userOrders, listOrders , updateStatus } from "../controllers/orderController.js";
 import authMiddleware from "../middleware/auth.js";
 
 
@@ -12,6 +12,8 @@ orderRouter.post('/verify-order' , verifyOrder);
 orderRouter.post('/user-orders' , authMiddleware , userOrders );
 
 orderRouter.get('/list-orders' , listOrders);
+
+orderRouter.post('/update-status' , updateStatus);
 
 
 
