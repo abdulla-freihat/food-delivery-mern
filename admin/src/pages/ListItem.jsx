@@ -8,7 +8,7 @@ const ListItem = () => {
 
   const fetchList = async () => {
     try {
-      const res = await axios.get(`${url}/api/food/food-list`);
+      const res = await axios.get(`${url}/api/food/food-list` );
 
       if (res.data.success) {
         setList(res.data.data);
