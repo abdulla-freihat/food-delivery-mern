@@ -91,7 +91,7 @@ const loginUser = async (req, res) => {
       success: true,
       message: "Sign in successfully",
       token,
-      isAdmin
+     isAdmin: user.isAdmin
     });
   } catch (err) {
     return res.status(500).json({
