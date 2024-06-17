@@ -10,7 +10,7 @@ const Login = () => {
     const url = "http://localhost:8000";
     const navigate  = useNavigate();
 
-    const {setToken} = useContext(AuthContext)
+    const {setToken , setIsAdmin} = useContext(AuthContext)
 
     const [data , setData] = useState({
 
@@ -35,12 +35,27 @@ const Login = () => {
 
                if(res.data.success){
 
+                if(res.data.isAdmin){
+                 
+                  
                 setToken(res.data.token);
+                setIsAdmin(res.data.isAdmin);
+
                 localStorage.setItem("token", res.data.token);
+                localStorage.setItem("isAdmin", res.data.isAdmin);
+
                    
                 navigate('/admin')
               
                 toast.success(res.data.message);
+                     
+                }else{
+
+                  toast.error("You do not have admin privileges.");
+
+                }
+                
+
                }  else {
                 toast.error(res.data.message);
               }
