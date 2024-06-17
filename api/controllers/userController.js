@@ -66,7 +66,7 @@ const registerUser = async (req, res) => {
 
 // Login user
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password ,isAdmin } = req.body;
 
   try {
     const user = await User.findOne({ email });
@@ -90,12 +90,14 @@ const loginUser = async (req, res) => {
     return res.status(201).json({
       success: true,
       message: "Sign in successfully",
-      token
+      token,
+      isAdmin
     });
   } catch (err) {
     return res.status(500).json({
       success: false,
-      message: "Server error"
+      message: "Server error",
+     
     });
   }
 };
