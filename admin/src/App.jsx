@@ -16,7 +16,7 @@ const App = () => {
       <BrowserRouter>
         <ToastContainer />
         <Routes>
-          <Route path='/admin/login' element={<Login />} />
+          <Route path='/' element={<Login />} />
           <Route path='/admin' element={<ProtectedAdminAuth><ProtectedAdminLayout /></ProtectedAdminAuth>}>
             <Route path="add" element={<AddItem />} />
             <Route path="list" element={<ListItem />} />
